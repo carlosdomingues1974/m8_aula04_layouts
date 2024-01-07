@@ -12,13 +12,16 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.util.Optional;
 
 public class PrincipalController {
     @FXML
     private BorderPane borderPane;
 
+    /**
+     * Fecha a aplicação, caso o botão clicado seja o Sim
+     * @param actionEvent evento disparado
+     */
     public void menuExitApplication(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Sair da aplicação");
@@ -34,6 +37,11 @@ public class PrincipalController {
         }
     }
 
+    /**
+     * Carrega uma nova janela de diálogo com o Acerca de
+     * @param actionEvent evento disparado
+     * @throws Exception serve para ignorar todos o warnings de exceções. Caso contrário temos qe usar o try...catch
+     */
     public void menuAbout(ActionEvent actionEvent) throws Exception {
         // Aquisição do controlo da cena (Scene) about FXML
         Parent scene = FXMLLoader.load(getClass().getResource("about.fxml"));
@@ -103,5 +111,13 @@ public class PrincipalController {
 
         // Atribuição da Scene à zona central da cena Principal, que é um BorderPane
         borderPane.setCenter(scene);
+    }
+
+    public void menuHome(ActionEvent actionEvent) throws Exception {
+        // Aquisição do controlo do Scene pretendida
+        Parent scene = FXMLLoader.load(getClass().getResource("principal.fxml"));
+
+        // Atribuição da Scene à zona central da cena Principal, que é um BorderPane
+        Settings.getPrimaryStage().setScene(new Scene(scene));
     }
 }

@@ -34,6 +34,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="Ficheiro">
             <items>
+                  <MenuItem mnemonicParsing="false" onAction="#menuHome" text="Início" />
               <MenuItem mnemonicParsing="false" onAction="#menuExitApplication" text="Sair" />
             </items>
           </Menu>
