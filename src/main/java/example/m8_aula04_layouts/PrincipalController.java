@@ -12,9 +12,6 @@ import javafx.stage.Stage;
 
 import java.util.Optional;
 
-import static example.m8_aula04_layouts.Settings.ALERTBOX_DIALOG;
-import static example.m8_aula04_layouts.Settings.AlertBox;
-
 public class PrincipalController {
 
     public void menuExitApplication(ActionEvent actionEvent) {
