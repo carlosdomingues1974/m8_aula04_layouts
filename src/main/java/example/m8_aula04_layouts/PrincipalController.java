@@ -2,6 +2,7 @@ package example.m8_aula04_layouts;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,11 +12,12 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Optional;
 
 public class PrincipalController {
-
-    public BorderPane borderPane;
+    @FXML
+    private BorderPane borderPane;
 
     public void menuExitApplication(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -70,5 +72,19 @@ public class PrincipalController {
         // Atribuição da Scene à zona central da cena Principal, que é um BorderPane
         Settings.getPrimaryStage().setScene(new Scene(scene));
         //primaryStage.setScene(new Scene(scene));
+    }
+
+    /**
+     * Carrega a cena anchorPane para a zona central do borderPane
+     * @param actionEvent evento disparado
+     */
+    public void menuAnchorPane(ActionEvent actionEvent) throws Exception{
+        // Aquisição do controlo da cena do Layout AnchorPane FXML (anchorpane.fxml) e
+        // associar à zona central da BorderPane.
+        // Aquisição do controlo do Scene pretendida
+        Parent scene = FXMLLoader.load(getClass().getResource("anchorpane.fxml"));
+
+        // Atribuição da Scene à zona central da cena Principal, que é um BorderPane
+        borderPane.setCenter(scene);
     }
 }

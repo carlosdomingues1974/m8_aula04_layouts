@@ -17,7 +17,7 @@ public class Settings {
      *     // - Permitir manipular o tamanho da stage (caso da calculadora)
      *     // - Permitir defini-la Parent de outras stages Modais, etc.
      */
-    public static Stage primaryStage;
+    private static Stage primaryStage;
 
     public static Stage getPrimaryStage() {
         return primaryStage;
