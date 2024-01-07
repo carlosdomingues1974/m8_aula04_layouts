@@ -1,0 +1,79 @@
+Nesta aula aborda-se os vários Layouts e a técnica Switch Scene
+
+- Layouts são elementos XML especiais. São Containers: recebem e organizam outros elementos XML,
+    inclusive outros containers.
+- Switch Scene é a técnica que o JavaFX usa, em que há uma só Stage e várias Scenes que vão mudando.
+    É uma vantagem em relação ao WPF, porque dispensa o peso das stages, que são sempre Controls.
+
+    A execeção aqui é a interface About (Acerca De) é uma Stage com a sua própria Scene.
+
+O projeto é constituido por duas Stages: Principal e About, que carregam as suas Scenes.
+A Stage principal começa por carregar a Scene Principal na Main. É composta por um menuBar, com 3 menus:
+- Ficheiro com um só item: Sair (chama um método no Controller, com uma alert Box)
+- Layouts com vários itens, cada um abre uma nova Scene na própria Stage. Cada Scene tem um Layoyt diferente.
+- Ajuda com um só item: AcercaDe abre uma nova Stage em modo Modal com a SceneAcercaDe.
+
+Layouts usam a técnica Switch Scene para mostrar as várias Scenes, cada uma com o seu Layout. Contudo vamos
+um pouco mais além na técnica... Vamos mudar Scenes para dentro de outras Scenes...
+
+Lembrar que:
+ - Cada Interface é composta por uma Stage e uma Scene
+ - Cada Scene tem uma (FXML) e um Controler (java).
+ - Ambos são ligados na FXML, que referencia o Controler na TAG principal.
+ - Cada Scene tem um root Layout (Container) que contém elementos XML.
+
+*******************************************************************************************************************
+Ações: depois do gitConfig
+1º git configs e init commit
+2º MainApp -> alterar o tamanho da stage para 600 x 400 (caso não esteja) e alterar o título para
+    "Aula 4 - Layouts com menu - Troca de cenas"
+3º Alterar nome dos ficheiros da Scene atual: principal
+    Executar para verificar erros
+
+4º Criar o MENU seguinte no sceneBuider:
+    Para tal no separador Containers do lado esquerdo do SceneBuilder escolhemos a opção MenuBar
+    De seguida no separador Menu temos várias opções
+    Menu Ficheiro : com o menuItem Sair
+    Menu Layouts: com 4 menuItens: AnchorPane BorderPane, GridPane e StackPane
+    Menu Ajuda: com o menuItem Acerca De.
+    Executar para verificar erros
+
+    Operacionalizar os itens Sair e AcercaDe, a partir do projeto anterior:
+    Consultar o projeto anterior se necessário
+    Executar para verificar erros e observar o resultado.
+
+    Testar
+    git Commit & Push: Logística do projeto com menu concluído. Operacionalizar os itens Sair e AcercaDe.
+
+5º Criar 4 novas Scenes com os respeticos controllers:
+    - SceneLayoutBorderpane
+    - SceneLayoutStackPane
+    - SceneLayoutGridPane
+    - SceneLayoutAnchorPane
+
+    1º Rato direito sobre a pasta do package resources/example.m08_aula04_layout.
+        New -> FXML File. Add to git
+    2º O Layout (FXML) é criado, mas o controller (java) não.
+        Observar que a FXML indica essa falta e sugere a criação do controller.
+        Criar o Controller, colocando o rato sobre o erro indicado e selecionando a opção "Create Class PrincipalController"
+        aceitar a Adição da nova file ao git.
+        Esta classe deve ser criada na pasta do package java/example.m08_aula04_layout.
+    3º Mudar o Layout (o default é o AnchorPane)
+        SceneBuilder -> Separador Containers, à esquerda.
+        Botão direito do rato sobre o AnchorPane -> Wrap in -> Selecionar o layout pretendido.
+        Eliminar o anterior, que fica sempre dentro do novo. (IMPORTANTE)
+
+        Outra maneira:
+        Eliminar primeiro o default layout (AnchorPane). De seguida no SceneBuilder do lado esquerdo
+        escolher o separador Containers e escolher o layout pretendido.
+
+    Executar para verificar erros
+
+    Criar os métodos de ação dos 4 itens do menu Layout, para abrir cada uma destas Scenes na zona central da ScenePrincipal
+    Tecnica SwitchScene:
+
+    Executar para verificar erros
+    Commit & Push: Criadas as Scenes dos Layouts. Ligação às opções do menu.
+
+
+6º Cada layout é comentado no controller de cada Scene.
