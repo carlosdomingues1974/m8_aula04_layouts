@@ -7,12 +7,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.util.Optional;
 
 public class PrincipalController {
+
+    public BorderPane borderPane;
 
     public void menuExitApplication(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -50,6 +53,22 @@ public class PrincipalController {
         about.show();
     }
 
-    public void buttonSwitchScene(ActionEvent actionEvent) {
+    /**
+     * Switch Scene é a técnica de substituir a Scene na Stage,
+     * É uma vantagem do JavaFX faça a outros concorrentes, pois dispensa o peso
+     * de ter várias Interfaces (Stage + Scene). Permite usar 1 Stage com várias Scenes.
+     * O problema surge quando há um navegador como o menu, pois ao substituir a Scene
+     * que tem o menu, perdemos o acesso ao menu.
+     * @param actionEvent evento disparado
+     */
+    public void buttonSwitchScene(ActionEvent actionEvent) throws Exception {
+        // Aquisição do controlo da cena do Layout AnchorPane FXML (anchorpane.fxml) e
+        // associar à zona central da BorderPane.
+        // Aquisição do controlo do Scene pretendida
+        Parent scene = FXMLLoader.load(getClass().getResource("anchorpane.fxml"));
+
+        // Atribuição da Scene à zona central da cena Principal, que é um BorderPane
+        Settings.getPrimaryStage().setScene(new Scene(scene));
+        //primaryStage.setScene(new Scene(scene));
     }
 }

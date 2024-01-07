@@ -28,7 +28,7 @@
    Em baixo encontra-se 2 separadores: Text e SceneBuilder
 -->
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="example.m8_aula04_layouts.PrincipalController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="example.m8_aula04_layouts.PrincipalController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
