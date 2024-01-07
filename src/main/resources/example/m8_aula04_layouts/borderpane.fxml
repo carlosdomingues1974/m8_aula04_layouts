@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="example.m8_aula04_layouts.BorderPaneController">
+   <top>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8d0c0e" height="100.0" stroke="BLACK" strokeType="INSIDE" width="606.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin></Rectangle>
+   </top>
+   <left>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ba1fff" height="203.0" stroke="BLACK" strokeType="INSIDE" width="100.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7eff1f" height="202.0" stroke="BLACK" strokeType="INSIDE" width="100.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" stroke="BLACK" strokeType="INSIDE" width="601.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffee1f" height="200.0" stroke="BLACK" strokeType="INSIDE" width="400.0" />
+            <Label text="BorderPane">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

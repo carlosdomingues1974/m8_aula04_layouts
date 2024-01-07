@@ -62,6 +62,7 @@ public class PrincipalController {
      * O problema surge quando há um navegador como o menu, pois ao substituir a Scene
      * que tem o menu, perdemos o acesso ao menu.
      * @param actionEvent evento disparado
+     * @throws Exception serve para ignorar todos o warnings de exceções. Caso contrário temos qe usar o try...catch
      */
     public void buttonSwitchScene(ActionEvent actionEvent) throws Exception {
         // Aquisição do controlo da cena do Layout AnchorPane FXML (anchorpane.fxml) e
@@ -77,12 +78,28 @@ public class PrincipalController {
     /**
      * Carrega a cena anchorPane para a zona central do borderPane
      * @param actionEvent evento disparado
+     * @throws Exception serve para ignorar todos o warnings de exceções. Caso contrário temos qe usar o try...catch
      */
     public void menuAnchorPane(ActionEvent actionEvent) throws Exception{
         // Aquisição do controlo da cena do Layout AnchorPane FXML (anchorpane.fxml) e
         // associar à zona central da BorderPane.
         // Aquisição do controlo do Scene pretendida
         Parent scene = FXMLLoader.load(getClass().getResource("anchorpane.fxml"));
+
+        // Atribuição da Scene à zona central da cena Principal, que é um BorderPane
+        borderPane.setCenter(scene);
+    }
+
+    /**
+     * Carrega a cena borderPane para a zona central do borderPane
+     * @param actionEvent evento disparado
+     * @throws Exception serve para ignorar todos o warnings de exceções. Caso contrário temos qe usar o try...catch
+     */
+    public void menuBorderPane(ActionEvent actionEvent) throws Exception {
+        // Aquisição do controlo da cena do Layout AnchorPane FXML (anchorpane.fxml) e
+        // associar à zona central da BorderPane.
+        // Aquisição do controlo do Scene pretendida
+        Parent scene = FXMLLoader.load(getClass().getResource("borderpane.fxml"));
 
         // Atribuição da Scene à zona central da cena Principal, que é um BorderPane
         borderPane.setCenter(scene);

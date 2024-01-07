@@ -40,7 +40,7 @@
           <Menu mnemonicParsing="false" text="Layouts">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#menuAnchorPane" text="AnchorPane" />
-                  <MenuItem mnemonicParsing="false" text="BorderPane" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuBorderPane" text="BorderPane" />
                   <MenuItem mnemonicParsing="false" text="GridPane" />
                   <MenuItem mnemonicParsing="false" text="StackPane" />
             </items>
