@@ -49,4 +49,7 @@ public class PrincipalController {
         //Abertura da janela About
         about.show();
     }
+
+    public void buttonSwitchScene(ActionEvent actionEvent) {
+    }
 }
